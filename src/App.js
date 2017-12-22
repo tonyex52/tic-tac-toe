@@ -2,20 +2,43 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
+class Naming extends Component {
+
+  constructor(props) {
+      super(props);
+  }
+
+  render() {
+      return (
+        <section className="player-naming">
+          <div>Player 1 <input type="text" onChange={(e) => this.props.assignName({which: 1, name: e.target.value})}/></div>
+          <br/>
+          <div>Player 2 <input type="text"/></div>
+        </section>
+      );
+  }
+}
+
+class game extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        player1: '',
+        player2: ''
+      }
+  }
+
+  _assignName({which, name}) {
+    let nameObject = {}
+    nameObject[`player${which}`] = name
+    this.setState(nameObject)
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to HAHA</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Naming assignName={this._assignName}/>
     );
   }
 }
 
-export default App;
+export default game;
