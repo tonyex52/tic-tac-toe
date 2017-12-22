@@ -2,3 +2,8 @@
   width: 800px;
   margin: 20px auto;
 }
+.input-text {
+  height: 30px;
+  outline: none;
+  padding: 5px 7px;
+}
