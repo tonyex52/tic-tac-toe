@@ -1,9 +1,61 @@
-.player-naming {
+.flexbox {
+  display: flex;
+  align-items: center;
+}
+.game-container {
   width: 800px;
+  margin: auto;
+  position: relative;
+}
+.player-naming {
   margin: 20px auto;
+  flex: 1;
 }
 .input-text {
   height: 30px;
   outline: none;
   padding: 5px 7px;
+}
+.state {
+  color: red;
+  font-size: 50px;
+  flex: none;
+  max-width: 50%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.choose-first-button,
+.reset-button {
+  border: 1px solid #0bc2f9;
+  background-color: #0bc2f9;
+  color: #FFF;
+  padding: 7px;
+}
+.choose-first-button + .choose-first-button,
+.choose-first-button + .reset-button,
+.reset-button + .choose-first-button,
+.reset-button + .reset-button {
+  margin-left: 10px;
+}
+.choose-first-button[disabled],
+.reset-button[disabled] {
+  border: 1px solid #919798;
+  background-color: #919798;
+}
+.reset-button {
+  border-color: #f90b0b;
+  background-color: #f90b0b;
+}
+.board-container {
+  width: 100%;
+  margin: 50px auto;
+}
+.board-item {
+  width: 33%;
+  height: 100px;
+  vertical-align: middle;
+  line-height: 100px;
+  display: inline-block;
+  border: 1px solid #369;
+  text-align: center;
 }
